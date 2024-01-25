@@ -33,7 +33,6 @@ import org.eclipse.ui.texteditor.ITextEditor;
 import org.eclipse.jdt.core.ICodeAssist;
 import org.eclipse.jdt.core.IJavaElement;
 import org.eclipse.jdt.core.ITypeRoot;
-import org.eclipse.jdt.core.JavaCore;
 import org.eclipse.jdt.core.JavaModelException;
 import org.eclipse.jdt.core.dom.ASTNode;
 import org.eclipse.jdt.core.dom.BreakStatement;
@@ -82,7 +81,7 @@ public class JavaElementHyperlinkDetector extends AbstractHyperlinkDetector {
 	 */
 	@Override
 	public IHyperlink[] detectHyperlinks(ITextViewer textViewer, IRegion region, boolean canShowMultipleHyperlinks) {
-		return JavaCore.callReadOnly(() -> detectHyperlinksCached(region));
+		return detectHyperlinksCached(region);
 	}
 
 	private IHyperlink[] detectHyperlinksCached(IRegion region) {
