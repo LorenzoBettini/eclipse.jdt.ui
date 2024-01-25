@@ -2179,7 +2179,7 @@ public abstract class JavaEditor extends AbstractDecoratedTextEditor implements 
 
 	@Override
 	public <T> T getAdapter(Class<T> required) {
-		return JavaCore.callReadOnly(() -> getAdapterCached(required));
+		return getAdapterCached(required);
 	}
 
 	@SuppressWarnings("unchecked")
